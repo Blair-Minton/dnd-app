@@ -16,20 +16,20 @@ export default async function NewCharacter() {
             proficiency_bonus: formData.get('proficiency_bonus'),
 
             // Ability Scores
-            strength: formData.get('strength'),
-            dexterity: formData.get('dexterity'),
-            constitution: formData.get('constitution'),
-            intelligence: formData.get('intelligence'),
-            wisdom: formData.get('wisdom'),
-            charisma: formData.get('charisma'),
+            str_score: formData.get('str_score'),
+            dex_score: formData.get('dex_score'),
+            con_score: formData.get('con_score'),
+            int_score: formData.get('int_score'),
+            wis_score: formData.get('wis_score'),
+            cha_score: formData.get('cha_score'),
             
             // Save Scores
-            strength_save: formData.get('strength_save'),
-            dexterity_save: formData.get('dexterity_save'),
-            constitution_save: formData.get('constitution_save'),
-            intelligence_save: formData.get('intelligence_save'),
-            wisdom_save: formData.get('wisdom_save'),
-            charisma_save: formData.get('charisma_save'),
+            str_save: formData.get('str_save'),
+            dex_save: formData.get('dex_save'),
+            con_save: formData.get('con_save'),
+            int_save: formData.get('int_save'),
+            wis_save: formData.get('wis_save'),
+            cha_save: formData.get('cha_save'),
             
             // Skills
             acrobatics: formData.get('acrobatics'),

@@ -12,7 +12,8 @@ def send_to_supabase(name, species, level, classes, subclasses, background, prof
                      insight, intimidation, investigation, medicine, nature, perception, 
                      performance, persuasion, religion, sleight_of_hand, stealth, survival, 
                      passive_perception, passive_investigation, passive_insight, 
-                     armor_class, initiative, speed, hit_points_current, hit_points_total, temp_hit_points, hit_dice, spent_hit_dice, mode):
+                     armor_class, initiative, speed, hit_points_current, hit_points_total,
+                     temp_hit_points, hit_dice, spent_hit_dice, mode):
     
     headers = {
         "apikey": SUPABASE_KEY,
