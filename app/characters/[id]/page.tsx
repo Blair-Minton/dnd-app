@@ -86,22 +86,21 @@ export default async function CharacterPage({ params }: { params: Promise<{ id: 
             <table className="w-full text-left border-collapse">
                 <thead>
                     <tr className="text-left text-gray-400 text-xs uppercase tracking-wider">
-                        <th className="pb-2"></th>
-                        <th className="pb-2"></th>
-                        <th className="pb-2"></th>
-                        <th className="pb-2"></th>
+                        <th className="pb-2">Ability</th>
+                        <th className="pb-2">Score</th>
+                        <th className="pb-2">Save</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="py-2"></td>
-                        <td className="py-2"></td>
-                        <td className="py-2"></td>
+                        <td className="py-2">Strength</td>
+                        <td className="py-2">{char.str_score}</td>
+                        <td className="py-2">{char.str_save}</td>
                     </tr>
                     <tr>
-                        <td className="py-2"></td>
-                        <td className="py-2"></td>
-                        <td className="py-2"></td>
+                        <td className="py-2">Dexterity</td>
+                        <td className="py-2">{char.dex_score}</td>
+                        <td className="py-2">{char.dex_save}</td>
                     </tr>
                 </tbody>
             </table>
