@@ -27,7 +27,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ id: 
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          <section className="border p-4 rounded md:row-span-2 bg_gray-900/50">
+          <section className="border p-4 rounded row-span-2 md:row-span-2 bg_gray-900/50">
             <h3 className="font-bold border-b mb-2">Ability Scores</h3>
             <p>Strength: {char.str_score}</p>
             <p>Dexterity: {char.dex_score}</p>
