@@ -12,7 +12,7 @@ def send_to_supabase(name, species, level, classes, subclasses, background, prof
                      insight, intimidation, investigation, medicine, nature, perception, 
                      performance, persuasion, religion, sleight_of_hand, stealth, survival, 
                      passive_perception, passive_investigation, passive_insight, 
-                     armor_class, initiative, speed, hit_points, temp_hit_points, hit_dice, mode):
+                     armor_class, initiative, speed, hit_points_current, hit_points_total, temp_hit_points, hit_dice, spent_hit_dice, mode):
     
     headers = {
         "apikey": SUPABASE_KEY,
@@ -21,7 +21,7 @@ def send_to_supabase(name, species, level, classes, subclasses, background, prof
         "Prefer": "return=minimal",
     }
     
-    # Values updated to snake_case; Keys kept as-is for API compatibility
+    
     payload = {
         "name": name,
         "species": species,
@@ -66,9 +66,11 @@ def send_to_supabase(name, species, level, classes, subclasses, background, prof
         "armor_class": armor_class,
         "initiative": initiative,
         "speed": speed,
-        "hit_points": hit_points,
+        "hit_points_current": hit_points_current,
+        "hit_points_total": hit_points_total,
         "temp_hit_points": temp_hit_points,
         "hit_dice": hit_dice,
+        "spent_hit_dice": spent_hit_dice,
     }
 
     filtered_payload = {k: v for k, v in payload.items() if v is not None and str(v).strip() != ""}
@@ -125,7 +127,7 @@ def open_form(mode):
         "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion",
         "Sleight of Hand", "Stealth", "Survival", "Passive Perception",
         "Passive Investigation", "Passive Insight", "Armor Class", "Initiative",
-        "Speed", "Hit Points", "Temporary Hit Points", "Hit Dice"
+        "Speed", "Current Hit Points", "Total Hit Points", "Temporary Hit Points", "Hit Dice", "Spent Hit Dice"
     ]
 
     entries = {}
@@ -183,9 +185,11 @@ def open_form(mode):
                 armor_class=data["Armor Class"],
                 initiative=data["Initiative"],
                 speed=data["Speed"],
-                hit_points=data["Hit Points"],
+                hit_points_current=data["Current Hit Points"],
+                hit_points_total=data["Total Hit Points"],
                 temp_hit_points=data["Temporary Hit Points"],
                 hit_dice=data["Hit Dice"],
+                spent_hit_dice=data["Spent Hit Dice"],
                 mode=mode,
             )
             window.destroy()

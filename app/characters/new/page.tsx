@@ -56,13 +56,15 @@ export default async function NewCharacter() {
             passive_investigation: formData.get('passive_investigation'),
             passive_insight: formData.get('passive_insight'),
             
-            // Combat Stats
+            // Stats
             armor_class: formData.get('armor_class'),
             initiative: formData.get('initiative'),
             speed: formData.get('speed'),
-            hit_points: formData.get('hit_points'),
+            hit_points_current: formData.get('hit_points_current'),
+            hit_points_total: formData.get('hit_points_total'),
             temporary_hit_points: formData.get('temporary_hit_points'),
             hit_dice: formData.get('hit_dice'),
+            spent_hit_dice: formData.get('spent_hit_dice'),
             
             // Other Details
 
@@ -136,9 +138,11 @@ export default async function NewCharacter() {
         <input name="armor_class" placeholder="Armor Class" className="border p-2" />
         <input name="initiative" placeholder="Initiative" className="border p-2" />
         <input name="speed" placeholder="Speed" className="border p-2" />
-        <input name="hit_points" placeholder="Hit Points" className="border p-2" />
+        <input name="hit_points_current" placeholder="Current Hit Points" className="border p-2" />
+        <input name="hit_points_total" placeholder="Total Hit Points" className="border p-2" />
         <input name="temp_hit_points" placeholder="Temporary Hit Points" className="border p-2" />
         <input name="hit_dice" placeholder="Hit Dice" className="border p-2" />
+        <input name="spent_hit_dice" placeholder="Spent Hit Dice" className="border p-2" />
         
 
 

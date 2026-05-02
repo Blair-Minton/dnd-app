@@ -1,3 +1,4 @@
+// Dashboard
 import Link from 'next/link';
 import { supabaseFetch} from '../lib/supabase-api';
 
@@ -12,18 +13,21 @@ export default async function Dashboard() {
           Create New Character
         </Link>
       </header>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 rounded-lg">
         {characters.map((char: any) => (
-          <div key={char.id} className="border p-4 rounded shadow-sm">
+          <Link
+            key={char.id}
+            href={`/characters/${char.id}`}
+            className="border p-4 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer block">
             <h2 className="text-xl font-semibold">{char.name}</h2>
             <p className="text-gray-600">Level {char.level} {char.species} {char.classes}</p>
-            <p className="text-gray-600">STR: {char.str_score} DEX: {char.dex_score} CON: {char.con_score}</p>
+            {/*<p className="text-gray-600">STR: {char.str_score} DEX: {char.dex_score} CON: {char.con_score}</p>
             <p className="text-gray-600">INT: {char.int_score} WIS: {char.wis_score} CHA: {char.cha_score}</p>
             <p className="text-gray-600">AC: {char.armor_class} HP: {char.hit_points}</p>
             <p className="text-gray-600">Speed: {char.speed} Initiative: {char.initiative}</p>
-            <p className="text-gray-600">Proficiency Bonus: {char.proficiency_bonus}</p>
+            <p className="text-gray-600">Proficiency Bonus: {char.proficiency_bonus}</p>*/}
              {/* Add more character details as needed */}
-          </div>
+          </Link>
         ))}
       </div>
     </main>
