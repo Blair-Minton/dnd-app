@@ -2,6 +2,8 @@
 import { supabaseFetch } from '../../../lib/supabase-api';
 import Link from 'next/link';
 
+
+
 export default async function CharacterPage({ params }: { params: Promise<{ id: string }> }) {
   // In Next.js 15+, params is a promise
   const { id } = await params;
@@ -10,6 +12,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ id: 
   const data = await supabaseFetch(`characters?id=eq.${id}&select=*`);
   const char = data[0];
 
+  
   if (!char) {
     return <div className="p-8">Character not found.</div>;
   }
@@ -76,6 +79,32 @@ export default async function CharacterPage({ params }: { params: Promise<{ id: 
             <p>Intelligence: {char.int_save}</p>
             <p>Wisdom: {char.wis_save}</p>
             <p>Charisma: {char.cha_save}</p>
+          </section>
+
+          <section className="border p-4 rounded">
+            <h3 className="font-bold border-b mb-2">Weapons / Spells</h3>
+            <table className="w-full text-left border-collapse">
+                <thead>
+                    <tr className="text-left text-gray-400 text-xs uppercase tracking-wider">
+                        <th className="pb-2"></th>
+                        <th className="pb-2"></th>
+                        <th className="pb-2"></th>
+                        <th className="pb-2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className="py-2"></td>
+                        <td className="py-2"></td>
+                        <td className="py-2"></td>
+                    </tr>
+                    <tr>
+                        <td className="py-2"></td>
+                        <td className="py-2"></td>
+                        <td className="py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
           </section>
 
         </div>
