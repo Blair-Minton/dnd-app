@@ -10,8 +10,8 @@ export default async function NewCharacter() {
             name: formData.get('name'),
             species: formData.get('species'),
             level: formData.get('level'),
-            class: formData.get('class'),
-            subclass: formData.get('subclass'),
+            classes: formData.get('classes'),
+            subclasses: formData.get('subclasses'),
             background: formData.get('background'),
             proficiency_bonus: formData.get('proficiency_bonus'),
 
@@ -62,7 +62,7 @@ export default async function NewCharacter() {
             speed: formData.get('speed'),
             hit_points_current: formData.get('hit_points_current'),
             hit_points_total: formData.get('hit_points_total'),
-            temporary_hit_points: formData.get('temporary_hit_points'),
+            temp_hit_points: formData.get('temp_hit_points'),
             hit_dice: formData.get('hit_dice'),
             spent_hit_dice: formData.get('spent_hit_dice'),
             
